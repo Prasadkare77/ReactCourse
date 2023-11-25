@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { InputBox } from './Components'
 import {useCurrencyInfo} from './hooks/useCurrencyInfo'
-import BackgroundImage from './assets/currency.jpg'
 import './App.css'
 
 function App() {
