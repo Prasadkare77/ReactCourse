@@ -8,20 +8,20 @@ function App() {
   const [todos, setTodos] = useState([])
 
   const addTodo = (todo) => {
-    setTodos((prevTodo) => [{id:Date.now(), ...todo}, ...prevTodo])
+    setTodos((prev) => [{id:Date.now(), ...todo}, ...prev])
     // console.log(todo)
   }
 
   const updateTodo = (id, todo) => {
-    setTodos((prevTodo) => prevTodo.map((prevTodo) => prevTodo.id === id ? todo : prevTodo))
+    setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? todo : prevTodo))
   }
 
   const deleteTodo = (id) => {
-    setTodos((prevTodo) => prevTodo.filter((prevTodo) => prevTodo.id !== id))
+    setTodos((prev) => prev.filter((prevTodo) => prevTodo.id !== id))
   }
 
   const toggleComplete = (id) => {
-    setTodos((prevTodo) => prevTodo.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed : !prevTodo.completed} : prevTodo ))
+    setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed : !prevTodo.completed} : prevTodo ))
   }
 
   useEffect(() => {
