@@ -34,7 +34,7 @@ export class Service{
         }
     }
 
-    async updatePost({title, content, featuredImage, status}){
+    async updatePost(slug, {title, content, featuredImage, status}){
         try {
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseID,
@@ -52,7 +52,7 @@ export class Service{
         }
     }
 
-    async deletePost({slug}){
+    async deletePost(slug){
         try {
             await this.databases.deleteDocument(
                 conf.appwriteDatabaseID,

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Editor } from '@tinymce/tinymce-react'
 
-const RTE = () => {
+const RTE = ({name, control, label, defualtValue = ''}) => {
   return (
-    <div>
+    <div className='w-full'>
         <Editor
         initialValue='default value'
         init={
@@ -16,6 +16,19 @@ const RTE = () => {
         }>
 
         </Editor>
+
+        {label && <label className='inline-block mb-1 pl-1'>{label}</label>}
+
+        <Controller
+        name={name || "content"}
+        control={control}
+        render={({field: {onChange}}) => (
+          <Editor
+          initialValue={defualtValue}
+          init={{}}>
+
+          </Editor>
+        )} />
     </div>
   )
 }
