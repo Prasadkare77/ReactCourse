@@ -52,9 +52,7 @@ const SignUp = () => {
                     {...register('email', {
                         required:true,
                         validate: {
-                            matchPattern: (value) => /^\w+([.-]?
-                                \w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.
-                                test(v) || 
+                            matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 
                             'Email Address Must Be a Valid Address',
                         }
                     })}
